@@ -17,7 +17,6 @@ const useNewsData = (category, searchTerm, date) => {
         const url = apiUrl + categoryParam + searchParam + dateParam;
         const response = await fetch(url);
         const data = await response.json();
-        console.log(data);
         setNewsData(data.articles);
         setLoading(false);
       } catch (error) {

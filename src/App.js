@@ -11,7 +11,7 @@ import {
   Container,
 } from "react-bootstrap";
 
-import NewsList from "./Components/NewsList";
+import NewsList from "./components/NewList";
 
 function App() {
   const [category, setCategory] = useState("");

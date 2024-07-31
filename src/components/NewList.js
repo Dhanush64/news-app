@@ -31,11 +31,11 @@ const NewsList = (props) => {
     );
   }
 
-  const totalArticles = newsData.length;
+  const totalArticles = newsData?.length;
   const totalPages = Math.ceil(totalArticles / pageSize);
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = startIndex + pageSize;
-  const currentArticles = newsData.slice(startIndex, endIndex);
+  const currentArticles = newsData?.slice(startIndex, endIndex);
 
   return (
     <Container>
@@ -45,7 +45,7 @@ const NewsList = (props) => {
               <Card style={{ width: "220px" }}>
                 <Card.Img
                   src={article.image}
-                  alt={article.title}
+                  alt={"Image of " + article.title}
                   variant="top"
                   loading="lazy"
                   style={{
