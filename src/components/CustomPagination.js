@@ -26,19 +26,26 @@ function CustomPagination(props) {
   };
 
   return (
-    <div className="d-flex justify-content-center">
-      <Pagination>
-        <Pagination.Prev
-          disabled={currentPage === 1}
-          onClick={() => handlePageClick(currentPage - 1)}
-        />
-        {renderPageItems()}
-        <Pagination.Next
-          disabled={currentPage === totalPages}
-          onClick={() => handlePageClick(currentPage + 1)}
-        />
-      </Pagination>
-    </div>
+    <>
+      {isNaN(totalPages) && (
+        <div className="alert alert-danger d-flex justify-content-center">
+          No data Available. Try again after some time.
+        </div>
+      )}
+      <div className="d-flex justify-content-center">
+        <Pagination>
+          <Pagination.Prev
+            disabled={currentPage === 1}
+            onClick={() => handlePageClick(currentPage - 1)}
+          />
+          {renderPageItems()}
+          <Pagination.Next
+            disabled={currentPage === totalPages}
+            onClick={() => handlePageClick(currentPage + 1)}
+          />
+        </Pagination>
+      </div>
+    </>
   );
 }
 

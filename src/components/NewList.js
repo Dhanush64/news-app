@@ -7,7 +7,7 @@ import CustomPagination from "./CustomPagination";
 const NewsList = (props) => {
   const { category, searchTerm } = props;
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 4;
+  const pageSize = 5;
 
   const onPageChange = (pageNumber) => setCurrentPage(pageNumber);
 
